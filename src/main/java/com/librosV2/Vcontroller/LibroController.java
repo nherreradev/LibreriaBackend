@@ -24,6 +24,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.librosV2.Wservice.LibroService;
 import com.librosV2.Zmodel.Libro;
+import com.librosV2.util.ValidarNumero;
 
 
 
@@ -43,6 +44,9 @@ public class LibroController {
 			public ResponseEntity<String> crearLibro(@RequestBody  Libro libro, UriComponentsBuilder uriComponentsBuilder) {
 
 				
+				if (libro.getNombre().isEmpty() || libro.getAutor().isEmpty()){
+					return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+				}
 
 				_libroService.guardarLibro(libro);
 
@@ -134,15 +138,23 @@ public class LibroController {
 		// OBTENER LIBRO ESPECIFICO POR ID
 		@CrossOrigin(origins = "http://localhost:4200")
 		@RequestMapping(value = "/libros/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
-		public ResponseEntity<Libro> encontrarLibroPorId(@PathVariable("id") int idLibro) {
+		public ResponseEntity<Libro> encontrarLibroPorId(@PathVariable("id") String idLibro) {
 
+			if (ValidarNumero.isNumeric(idLibro)) {
+				
+				Integer integerConseguido = Integer.parseInt(idLibro);
+
+				Libro libro = _libroService.encontrarLibroPorId(integerConseguido);
+				
+				return new ResponseEntity<Libro>(libro, HttpStatus.OK);
+			
+			}
+			
+			
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
 			
 
-			Libro libro = _libroService.encontrarLibroPorId(idLibro);
-
 			
-
-			return new ResponseEntity<Libro>(libro, HttpStatus.OK);
 
 		}
 		
