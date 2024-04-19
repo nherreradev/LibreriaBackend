@@ -44,7 +44,7 @@ public class LibroController {
 			public ResponseEntity<String> crearLibro(@RequestBody  Libro libro, UriComponentsBuilder uriComponentsBuilder) {
 
 				
-				if (libro.getNombre().isEmpty() || libro.getAutor().isEmpty()){
+				if (!libro.getNombre().isEmpty() || libro.getAutor().isEmpty()){
 					return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 				}
 
