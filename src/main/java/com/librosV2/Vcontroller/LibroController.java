@@ -48,6 +48,8 @@ public class LibroController {
 					Libro libroPR5 = new Libro();
 					Libro libroPR6 = new Libro();
 
+					Libro libroPR7 = new Libro();
+
 
 
 					//Cambios de prueba
