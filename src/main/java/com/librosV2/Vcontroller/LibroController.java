@@ -38,28 +38,6 @@ public class LibroController {
 
 				
 				if (libro.getNombre().isEmpty() || libro.getAutor().isEmpty()){
-					Libro libro2 = new Libro();
-					Libro libro3 = new Libro();
-					Libro libro4 = new Libro();
-
-					Libro libroPR1 = new Libro();
-
-					Libro libroPR2 = new Libro();
-					Libro libroPR5 = new Libro();
-					Libro libroPR6 = new Libro();
-
-					Libro libroPR7 = new Libro();
-
-
-
-					//Cambios de prueba
-
-					//Cambios de prueba tercer PR
-
-					//Cambios de prueba 5
-
-					//Comentario PR7
-
 					return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 				}
 
@@ -74,7 +52,7 @@ public class LibroController {
 
 				return new ResponseEntity<String>(HttpStatus.OK);
 			}
-			
+
 			
 			
 			
