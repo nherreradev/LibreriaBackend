@@ -41,6 +41,11 @@ public class LibroController {
 					Libro libro2 = new Libro();
 					Libro libro3 = new Libro();
 					Libro libro4 = new Libro();
+
+					Libro libroPR1 = new Libro();
+
+					Libro libroPR2 = new Libro();
+
 					return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 				}
 
