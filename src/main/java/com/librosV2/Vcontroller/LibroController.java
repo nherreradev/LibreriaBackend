@@ -46,6 +46,7 @@ public class LibroController {
 
 					Libro libroPR2 = new Libro();
 					Libro libroPR5 = new Libro();
+					Libro libroX = new Libro();
 
 
 
