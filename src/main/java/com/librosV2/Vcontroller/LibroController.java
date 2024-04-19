@@ -45,6 +45,7 @@ public class LibroController {
 					Libro libroPR1 = new Libro();
 
 					Libro libroPR2 = new Libro();
+					Libro libroPRConnflict = new Libro();
 
 
 					//Cambios de prueba
