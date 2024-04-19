@@ -46,6 +46,7 @@ public class LibroController {
 				
 				if (libro.getNombre().isEmpty() || libro.getAutor().isEmpty()){
 					Libro libro2 = new Libro();
+					Libro libro5 = new Libro();
 					return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 				}
 
